@@ -1,0 +1,139 @@
+.app--header {
+  position: sticky;
+  top: 0px;
+  width: 100%;
+  background-color: #0a192f;
+  z-index: 1000;
+  animation: nav-load var(--nav-load-time) ease-in-out;
+}
+
+@media (max-width: 640px) {
+  nav {
+    display: none;
+    max-width: 100%;
+  }
+}
+
+nav .menu-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 70px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  background-color: #0a192f;
+  border-bottom: 1px solid white;
+  overflow: hidden;
+}
+
+nav .menu-list:hover {
+  border-bottom: 1px solid #64ffda;
+}
+
+nav .menu-item,
+.menu-item > a {
+  position: relative;
+  font-family: Archivo, sans-serif;
+  font-size: 14px;
+  line-height: 140%;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  padding: 14px 14px;
+
+  animation-name: nav-link-load;
+  animation-duration: var(--nav-link-load-time);
+  animation-timing-function: ease-in;
+  animation-delay: var(--nav-load-time);
+  animation-fill-mode: forwards;
+  transform: scale(0);
+}
+
+nav .menu-item:hover,
+.menu-item > a:hover {
+  color: #64ffda;
+}
+
+nav .menu-item:first-child {
+  animation-name: nav-first-link-load;
+  transform: translateX(-1000%);
+}
+
+nav .menu-item:last-child {
+  animation-name: nav-last-link-load;
+  transform: translateX(1000%);
+}
+
+.menu-list .menu-item:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom;
+  transition: transform 0.25s ease-out;
+  transform-origin: bottom;
+  height: 2px;
+}
+
+nav .menu-item:after {
+  background-color: #64ffda;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+}
+
+/* Keyframes  */
+@keyframes nav-load {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes nav-link-load {
+  0% {
+    transform: scale(0);
+  }
+  90% {
+    transform: scale(1.5);
+    color: #64ffda;
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes nav-first-link-load {
+  0% {
+    transform: translateX(-1000%);
+  }
+  90% {
+    transform: translateX(70%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes nav-last-link-load {
+  0% {
+    transform: translateX(1000%);
+  }
+  90% {
+    transform: translateX(-70%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

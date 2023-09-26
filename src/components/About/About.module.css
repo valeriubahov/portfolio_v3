@@ -1,0 +1,120 @@
+.section {
+  scroll-margin-top: 70px;
+  background-color: #e4e8f7;
+  padding: 60px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.section--about {
+  padding-bottom: 100px;
+  padding-top: 100px;
+}
+
+.section--about-content .large {
+  padding-bottom: 1.5rem;
+}
+
+.large h4 {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-weight: 300;
+  line-height: 135%;
+}
+
+.section--about-content .large h4,
+.section--about-content .large p {
+  opacity: 0;
+  visibility: hidden;
+  transform: matrix(0.99619, 0.08715, 0, 1, 0, 120);
+  transition: all 0.9s ease-in-out;
+}
+
+.large p {
+  font-size: 1.5rem;
+  line-height: 130%;
+  padding-bottom: 3rem;
+  font-family: sans-serif;
+}
+
+.section--about-content .large h4 {
+  font-size: 1.5rem;
+  line-height: 125%;
+  font-weight: 400;
+  padding-bottom: 1.5rem;
+  padding: 0;
+  font-family: sans-serif;
+  font-weight: 800;
+}
+
+.section--about-content .large h4.scroll-effect,
+.section--about-content .large p.scroll-effect {
+  opacity: 0.75;
+  visibility: inherit;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  transition: all 0.9s ease-in-out;
+}
+
+@media (min-width: 1600px) {
+  .section--about-content .large h4 {
+    line-height: 135%;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding-top: 3rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .section--about-content .large h4 {
+    line-height: 135%;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .section--about-content .large p {
+    line-height: 160%;
+  }
+}
+
+@media (min-width: 768px) {
+  .section--about-content .large h4 {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 575px) {
+  .section--about-content .large p {
+    font-size: 1.5rem;
+  }
+  .section--about-content .large h4 {
+    font-size: 1.75rem;
+    font-weight: 300;
+  }
+}
+
+p img {
+  height: 1em;
+}
+
+p a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p {
+  white-space: pre-line;
+}
+
+
