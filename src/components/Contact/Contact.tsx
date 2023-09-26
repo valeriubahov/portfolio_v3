@@ -24,7 +24,7 @@ const Contact: React.FC = () => {
     ? `${layout["contact-col"]} ${layout["contact--form"]} ${layout["fade-effect"]} ${layout["fade-up"]}`
     : `${layout["contact-col"]} ${layout["contact--form"]} ${layout["fade-effect"]}`;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     console.log(e.target.elements.name.value);
     console.log(e.target.elements.email.value);

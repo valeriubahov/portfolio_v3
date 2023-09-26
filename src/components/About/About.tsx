@@ -32,7 +32,7 @@ const AboutMe: React.FC = () => {
         <div className={styles["section--about-content"]}>
           <div className={styles.large}>
             <h4 className={headerClass} ref={headerRef}>
-              {user.basics.headline}
+              {user?.basics?.headline}
             </h4>
 
             <p className={subHeaderClass} ref={subHeaderRef}>
@@ -41,8 +41,8 @@ const AboutMe: React.FC = () => {
                 Moldova <img src="/moldova-flag.svg" alt="Moldova's Flag" />
               </a>{" "}
               and lived in Italy for 17 years, and am currently based in{" "}
-              {user.basics.locationAsString}
-              {user.basics.summary}
+              {user?.basics?.locationAsString}
+              {user?.basics?.summary}
             </p>
           </div>
         </div>

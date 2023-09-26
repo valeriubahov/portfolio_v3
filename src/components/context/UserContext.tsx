@@ -1,8 +1,8 @@
 import { createContext, useContext } from "react";
-import { UserProviderProps } from "../../interfaces/types";
+import { IContext, UserProviderProps } from "../../interfaces/types";
 import useFetch from "../customHooks/fetchUserData";
 
-export const UserDataContext = createContext(undefined);
+export const UserDataContext = createContext<IContext | undefined>(undefined);
 
 const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
   const { user, isLoading } = useFetch();

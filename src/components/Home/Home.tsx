@@ -12,7 +12,7 @@ const Home: React.FC = () => {
       <Wrapper>
         <div className={styles["wrapper--content"]}>
           <span className={styles["tag-line"]}>Hi, my name is</span>
-          <h1 className={styles.headline}>{user.basics.name}</h1>
+          <h1 className={styles.headline}>{user?.basics?.name}</h1>
           <h2 className={styles["sub-headline"]}>I'm a software developer.</h2>
           <h3 className={styles["sub-header"]}>
             I love building interactive website that run across platforms & devices using&nbsp;

@@ -2,7 +2,14 @@ import { useRef } from "react";
 import useOnScreen from "../customHooks/useOnScreen";
 import styles from "./Layout.module.css";
 
-const Button: React.FC = (props) => {
+interface IProp {
+  target?: string;
+  url?: string;
+  name?: string;
+  type?: string;
+}
+
+const Button: React.FC<IProp> = (props) => {
   const buttonRef = useRef(null);
   const isButtonVisible = useOnScreen(buttonRef, 0.6);
 

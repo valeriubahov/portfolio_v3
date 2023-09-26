@@ -1,8 +1,13 @@
 import { useRef } from "react";
 import useOnScreen from "../customHooks/useOnScreen";
 import styles from "./Experience.module.css";
+import { IWork } from "../../interfaces/types";
 
-const ExperienceItem: React.FC = ({ experience, index }) => {
+interface IExperience {
+  experience: IWork;
+  index: number;
+}
+const ExperienceItem: React.FC<IExperience> = ({ experience, index }) => {
   const divRef = useRef<HTMLDivElement>(null);
   const isDivVisible = useOnScreen(divRef, 0.6);
 
@@ -13,9 +18,9 @@ const ExperienceItem: React.FC = ({ experience, index }) => {
   return (
     <div ref={divRef} className={effect}>
       <p className={styles["exp-number"]}>0{index + 1}</p>
-      {experience.end.month ? (
+      {experience?.end.month ? (
         <h6>
-          {new Date(experience.start.year, parseInt(experience.start.month) - 1, 1).toLocaleString(
+          {new Date(experience?.start?.year, experience?.start?.month - 1, 1).toLocaleString(
             "default",
             {
               month: "long",
@@ -29,7 +34,7 @@ const ExperienceItem: React.FC = ({ experience, index }) => {
         </h6>
       ) : (
         <h6>
-          {new Date(experience.start.year, parseInt(experience.start.month) - 1, 1).toLocaleString(
+          {new Date(experience.start.year, experience.start.month - 1, 1).toLocaleString(
             "default",
             {
               month: "long",

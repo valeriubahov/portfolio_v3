@@ -5,6 +5,7 @@ import Wrapper from "../UI/Wrapper";
 
 import "../../index.css";
 import Button from "../UI/Button";
+import { IWork } from "../../interfaces/types";
 
 const Experience: React.FC = () => {
   const { user } = useUserContext();
@@ -13,7 +14,7 @@ const Experience: React.FC = () => {
     <section id="experience" className={styles["section--exp"]}>
       <Wrapper>
         <div className={styles["exp-col"]}>
-          {user.work.map((work: any, i: number) => (
+          {user?.work?.map((work: IWork, i: number) => (
             <ExperienceItem key={i} experience={work} index={i} />
           ))}
         </div>

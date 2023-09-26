@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
+import { IUser } from "../../interfaces/types";
 
 const useFetch = () => {
-  const [user, setUser] = useState(undefined);
-  const [isLoading, setIsLoading] = useState(true);
+  const [user, setUser] = useState<IUser | undefined>(undefined);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const fetchData = useCallback(async () => {
     try {
